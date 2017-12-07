@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: kong-web
+  labels:
+    app: kong-web
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kong-web
+    spec:
+      containers:
+        - name: kong-web
+          image: gcr.io/vscape-187223/rapuanokongweb:v1
+          ports:
+            - containerPort: 8080
+       
+
